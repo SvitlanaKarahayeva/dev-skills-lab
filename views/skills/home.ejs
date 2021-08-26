@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Express Dev Skills</title>
+</head>
+<body>
+  <h1>Important Developer Skills</h1>
+  
+  <ul>
+  
+    <% skills.forEach(function(el) { %>
+  
+        <li >
+         
+          <!-- Removes skills by clicking  "X" -->
+          <span>
+    		  <button class="btn btn-default btn-xs pull-right remove-item">
+          <span class="glyphicon glyphicon-remove"><a href="/skills/remove/<%= el.id %>">X</a>
+          
+        </button>
+        </span>
+          
+           <!-- Displays the list of the skills -->
+          <a href="/skills/<%= el.id %>"><%= el.name %> </a>
+          
+        </li>
+        
+    <% }); %>
+    
+  </ul>
+ 
+<h2>Add your Skills</h2>
+
+<div class="form-div">
+  <form action="/skills/" method="POST">
+      <div class="form-group">  
+        <label>Skill Id</label>
+            <input type="number" name="skillID">
+      </div>
+      <div class="form-group">  
+        <label>Skill</label>
+        <input type="text" name="skillName">
+      </div>
+      <div class="form-group">  
+        <label>Skill Type</label>
+            <select name="skillType">
+            
+            <option value="HARD SKILL">Hard Skill</option>
+            <option value="SOFT SKILL">Soft Skill</option>
+            <option value="HYBRID">Hybrid</option>
+            
+            </select>
+      </div> 
+            <button type="submit" class=" btn-primary">Add Skill</button>
+     
+    <!-- <form action="/skills/" method="post">
+      Skill Id: <input id="inputForm" type="number" name="skillID"><br>
+      Skill Name: <input id="inputForm" type="text" name="skillName"><br>
+      Skill Type: <input id="inputForm" type="text" name="skillType"><br>
+      <input type="submit" value="Add Skill">
+  </form> -->
+</div>
+  
+ 
+  </body>
+</html>

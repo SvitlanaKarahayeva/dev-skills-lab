@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+} 
+
+a {
+  color: grey;
+}
+ul{
+list-style-type: none;
+}
+
+button.btn{
+  background-color: red;
+  margin: 1px;
+}
